@@ -3,7 +3,7 @@ version: '3'
 services:
   app:
     container_name: fastapi-sample
-    build: src/
+    build: .
     image: fastapi-sample
     ports:
       - "8000:8000"
