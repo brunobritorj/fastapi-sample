@@ -5,6 +5,8 @@ services:
     container_name: fastapi-sample
     build: .
     image: fastapi-sample
+    environment:
+      - PORT=${PORT:-8000}
     ports:
-      - "8000:8000"
+      - "${PORT:-8000}:${PORT:-8000}"
     restart: always
