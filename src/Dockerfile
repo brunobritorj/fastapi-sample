@@ -12,5 +12,7 @@ COPY --from=builder /build/.venv/lib/python3.13/site-packages /usr/local/lib/pyt
 COPY app .
 USER appuser
 ENV PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1
-CMD [ "python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000" ]
+    PYTHONDONTWRITEBYTECODE=1 \
+    PORT=8000
+CMD ["sh", "-c", "python -m uvicorn main:app --host 0.0.0.0 --port $PORT"]
+EXPOSE 8000
