@@ -1,4 +1,3 @@
 fastapi
 uvicorn
-pydantic
 fastapi_msal[full]
